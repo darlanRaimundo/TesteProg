@@ -12,6 +12,7 @@
 		$usuario->__set('cpf', $_POST['cpf']);
 		$usuario->__set('competencias', $_POST['competencias']);
 		$usuario->__set('telefone', $_POST['telefone']);
+		$usuario->__set('status', "F");
 
 		$conexao = new Conexao();
 
@@ -25,6 +26,19 @@
 			header('Location: registrar?incluir=true');
 		}
 	
+	} else if ($acao == 'recuperarUsuarios') {
+		$usuario = new Usuario();
+		$conexao = new Conexao();
+		$service = new UserService($conexao,$usuario);
+		$usuarios = $service->recuperar_usuarios();
+	} else if ($acao == 'validar') {
+		$usuario = new Usuario();
+		$usuario->__set('cpf', $_POST['cpf']);
+		$conexao = new Conexao();
+		$service = new UserService($conexao,$usuario);
+		$service->validar();
+		$usuarios = $service->recuperar_usuarios();
+		header('Location: validar');
 	}
 	
 

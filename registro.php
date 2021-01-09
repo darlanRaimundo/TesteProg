@@ -47,6 +47,7 @@
 									<label>CPF:</label>
 									<input type="text" class="form-control" name="cpf" maxlength="14" oninput="mascara(cpf)" placeholder="xxx.xxx.xxx-xx" >
 
+									<hr />
 
 									<div class="col-sm-20">
 										<label>Competências</label>
@@ -63,6 +64,8 @@
 											<div class="col-sm-5"><input name="op7" type="checkbox"> DevOps </div>
 										</div>
 									</div>
+
+									<hr />
 									
 									<label>Telefone:</label>
 									<input type="text" class="form-control" name="telefone" maxlength="20" placeholder="(xx)xxxxx-xxxx" >

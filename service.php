@@ -37,6 +37,34 @@ class UserService {
 		$stmt->execute();
 		return $stmt->fetchColumn();
 	}
+
+	public function recuperar_usuarios() {
+		$query = '
+			select 
+				*
+			from 
+				cadusuario
+			order by nome;
+		';
+		$stmt = $this->conexao->prepare($query);
+		$stmt->bindValue(':cpf', $this->usuario->__get('cpf'));
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_OBJ);
+	}
+
+	public function validar() {
+		$query = '
+			update cadusuario
+			set status = :status
+			where 
+			 cpf = :cpf
+		';
+		$stmt = $this->conexao->prepare($query);
+		$stmt->bindValue(':status', 'T');
+		$stmt->bindValue(':cpf', $this->usuario->__get('cpf'));
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_OBJ);
+	}
 /*
 	public function atualizar() { //update
 

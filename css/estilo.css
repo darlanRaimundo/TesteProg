@@ -1,3 +1,9 @@
+*{margin:0; padding: 0; box-sizing: border-box;}
+
+.container {
+	margin: 0px;
+}
+
 .menu {
 	margin-bottom: 25px;
 }
@@ -10,6 +16,15 @@
 	border:solid 1px #DFDFDF;
 	padding:25px !important;
 	
+	
 }
 
+.tabela{
+	display:flex; 
+	margin: 10px;
+}
+
+.teste {
+	height: 115px; 
+}
 
