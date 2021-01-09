@@ -1,0 +1,9 @@
+CREATE TABLE `teste_prog`.`cadusuario` ( 
+ `id` INT(10) NOT NULL , 
+ `nome` VARCHAR(255) NOT NULL , 
+ `email` VARCHAR(255) NOT NULL , 
+ `cpf` VARCHAR(14) NOT NULL , 
+ `competencias` VARCHAR(300) NOT NULL , 
+ `telefone` VARCHAR(20) ,
+ `status` CHAR(1) ,
+ PRIMARY KEY (`id`(10))) ENGINE = InnoDB;
